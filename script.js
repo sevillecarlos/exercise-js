@@ -1,65 +1,18 @@
-
-// //6
-
-// const exmple = "a1c3b4b23n24o";
-
-
-// //7
-// function rot13(message) {
-//   const newMessage = message.split("");
-//   const newRotMessage = [];
-//   newMessage.forEach((x) => {
-//     /[a-zA-Z]/.test(x)
-//       ? newRotMessage.push(
-//           x !== x.toUpperCase()
-//             ? String.fromCharCode(
-//                 x.charCodeAt(0) + 13 >= 123
-//                   ? x.charCodeAt(0) + 13 - 122 + 96
-//                   : x.charCodeAt(0) + 13
-//               )
-//             : String.fromCharCode(
-//                 x.charCodeAt(0) + 13 >= 91
-//                   ? x.charCodeAt(0) + 13 - 90 + 64
-//                   : x.charCodeAt(0) + 13
-//               )
-//         )
-//       : newRotMessage.push(x);
-//   });
-
-//   return newRotMessage.join("");
-// }
-
-// //console.log(rot13("abcdefghijklmnopqrstuvwxyz"));
-// //97 - 122
-// //8
-// function alphabetPosition(text) {
-//   const newText = text;
-//   return newText
-//     .split("")
-//     .filter((x) => /[a-zA-Z]/.test(x))
-//     .map((x) => x.toLowerCase().charCodeAt(0) - 96)
-//     .join(" ");
-// }
-
-// //console.log(alphabetPosition("The sunset sets at twelve o' clock."));
 // //9
 
-// function findOutlier(integers) {
-//   const newIntegers = integers;
-//   return newIntegers.filter((x) => x % 2 === 0).length > 1
-//     ? parseInt(newIntegers.filter((x) => x % 2 !== 0).join(""))
-//     : parseInt(newIntegers.filter((x) => x % 2 === 0).join(""));
-// }
+function findOutlier(integers) {
+  return parseInt(
+    integers
+      .filter((x) =>
+        integers.filter((xx) => xx % 2 === 0).length > 1
+          ? x % 2 !== 0
+          : x % 2 === 0
+      )
+      .join("")
+  );
+}
 
-// //console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21]));
-
-// //10
-
-// function arrayDiff(a, b) {
-//   return a.filter((x) => !b.includes(x));
-// }
-
-// //console.log(arrayDiff([1,2,2,2,3],[2]));
+console.log(findOutlier([800, 8483, 54841719, 848484819, 1484841, 1887873, -2581]));
 
 // //11
 // function mazeRunner(maze, directions) {
